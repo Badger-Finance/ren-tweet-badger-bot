@@ -5,7 +5,7 @@ name: Pull Request - Build and Deploy to Development Environment
 on:
   pull_request:
     branches:
-      - main
+      - master
 
 env:
   TARGET_ENVIRONMENT: 'dev'
