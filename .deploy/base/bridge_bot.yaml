@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bridge-tweet-bot
+  name: bridge-tweet-bot-TARGET_ENVIRONMENT
   labels:
     app: bridge-tweet-bot-TARGET_ENVIRONMENT
 spec:
