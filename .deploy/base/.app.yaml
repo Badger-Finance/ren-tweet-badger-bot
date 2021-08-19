@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bridge-tweet-bot
+  name: bridge-tweet-bot-TARGET_ENVIRONMENT
   namespace: argocd
 spec:
   project: default
