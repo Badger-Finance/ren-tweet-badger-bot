@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: git@github.com:badger-finance/badger-kube-manifests
-    path: ren-tweet-badger-bot/
+    path: ren-tweet-badger-bot-TARGET_ENVIRONMENT/
     targetRevision: TARGET_ENVIRONMENT # dont worry about this, this gets replaced in the automation pipeline
   destination:
     server: 'https://kubernetes.default.svc'
