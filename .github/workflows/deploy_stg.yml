@@ -45,7 +45,7 @@ jobs:
           make install_validate_manifest
           make validate_manifest TARGET_ENVIRONMENT=${{ env.TARGET_ENVIRONMENT }}
 
-  deploy-dev:
+  deploy-stg:
     name: Release to Development Environemnt
     runs-on: ubuntu-latest
     needs: [build, validate_manifest]
