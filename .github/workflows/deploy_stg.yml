@@ -8,7 +8,7 @@ on:
       - development
 
 env:
-  TARGET_ENVIRONMENT: 'staging'
+  TARGET_ENVIRONMENT: 'stg'
   MANIFEST_RESPOSITORY: 'badger-finance/badger-kube-manifests'
   IMAGE_NAME: '/badger/${{ github.event.repository.name }}:${{ github.event.pull_request.head.sha }}'
 
