@@ -104,13 +104,13 @@ jobs:
           curl -o kustomize.tar.gz --location https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v3.8.1/kustomize_v3.8.1_linux_amd64.tar.gz
           tar -xzvf kustomize.tar.gz
           echo "Maybe Create Manifest Directory"
-          mkdir -p manifests/${{ github.event.repository.name }}/
+          mkdir -p manifests/${{ github.event.repository.name }}-${{ env.TARGET_ENVIRONMENT }}/
           echo "Replace TARGET_ENVIRONMENT"
           grep -rl 'TARGET_ENVIRONMENT' ./.deploy/base | xargs sed -i "s/TARGET_ENVIRONMENT/${{ env.TARGET_ENVIRONMENT }}/g"
           echo "Kustomize Manifest and Replace with SHA"
           ./kustomize build ./.deploy/${{ env.TARGET_ENVIRONMENT }} |
           sed --expression "s@IMAGE_NAME@${{ steps.login-ecr.outputs.registry }}${{ env.IMAGE_NAME }}@g" \
-          > manifests/${{ github.event.repository.name }}/manifest.yaml
+          > manifests/${{ github.event.repository.name }}-${{ env.TARGET_ENVIRONMENT }}/manifest.yaml
       - name: Commit and Push New Manifest
         shell: bash
         run: |
