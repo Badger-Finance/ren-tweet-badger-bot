@@ -28,6 +28,6 @@ spec:
             - name: TWITTER_SCREEN_NAME
               value: 'RenAssetsBot'
             - name: AWS_SECRET_NAME
-              value: 'bridge-tweet-bot-TARGET_ENVIRONMENT/twitter-and-discord'
+              value: 'bridge-tweet-bot/twitter-and-discord'
             - name: AWS_REGION
               value: 'us-west-1'

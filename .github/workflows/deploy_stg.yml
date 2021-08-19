@@ -105,6 +105,8 @@ jobs:
           tar -xzvf kustomize.tar.gz
           echo "Maybe Create Manifest Directory"
           mkdir -p manifests/${{ github.event.repository.name }}/
+          echo "Replace TARGET_ENVIRONMENT"
+          grep -rl 'TARGET_ENVIRONMENT' ./.deploy/base | xargs sed -i "s/TARGET_ENVIRONMENT/${{ env.TARGET_ENVIRONMENT }}/g"
           echo "Kustomize Manifest and Replace with SHA"
           ./kustomize build ./.deploy/${{ env.TARGET_ENVIRONMENT }} |
           sed --expression "s@IMAGE_NAME@${{ steps.login-ecr.outputs.registry }}${{ env.IMAGE_NAME }}@g" \
