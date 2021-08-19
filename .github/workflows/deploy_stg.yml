@@ -96,7 +96,7 @@ jobs:
           echo "sed \"s/TARGET_ENVIRONMENT/${{ env.TARGET_ENVIRONMENT }}/g\""
           mkdir -p manifests/applications/
           cat ./.deploy/base/.app.yaml | sed "s/TARGET_ENVIRONMENT/${{ env.TARGET_ENVIRONMENT }}/g" \
-              > manifests/applications/${{ github.event.repository.name }}.yaml
+              > manifests/applications/${{ github.event.repository.name }}-${{ env.TARGET_ENVIRONMENT }}.yaml
       - name: Kustomize Manifest
         shell: bash
         run: |
