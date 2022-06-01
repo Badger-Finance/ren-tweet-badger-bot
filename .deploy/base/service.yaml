@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bridge-tweet-bot-TARGET_ENVIRONMENT
+  labels:
+    app: bridge-tweet-bot-TARGET_ENVIRONMENT
+    service: bridge-tweet-bot-TARGET_ENVIRONMENT
+spec:
+  selector:
+    app: bridge-tweet-bot-TARGET_ENVIRONMENT
+  ports:
+    - name: http
+      port: 9000
+---
